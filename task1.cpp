@@ -1,4 +1,4 @@
-// task_1 (1)
+// task_2 (1)
 #include <iostream>
 #include <cmath>      
 using namespace std;
@@ -117,7 +117,7 @@ int main() {
 	return 0;
 }
 
-//task-1(2)
+//task-2(2)
 
 
 class BankAccount {
@@ -163,3 +163,37 @@ public:
 		cout << "Withdrawn Amount:  " << withdraw << endl;
 		cout << "Balance After Amount is withdrawn: " << withdraw() << endl;
 	};
+
+	//task-2(3)
+
+
+	class Student {
+	protected:
+		string name;
+
+	public:	virtual void input() = 0;
+			virtual void display() = 0;
+
+			virtual ~Student() {}
+	};
+	class UnderGraduate : public Student {
+	private:
+		string name;
+	public:
+		void input() override {
+			cout << "Enter Name of Student: " << endl;
+
+		}
+
+		void display() override {
+			cout << "\nStudent Name is : " << name << endl;
+		}
+		class Graduate : public Student{
+		private :
+			string name;
+		public:
+			void input() override {
+				cout << "Enter Name of Student: " << name << endl;
+			}
+
+		}
